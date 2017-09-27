@@ -488,3 +488,23 @@ def drawU():
         t.bk(120)
         t.rt(90)
         t.bk(60)
+
+def drawV():
+    #Draws an uppercase A
+        a = 26.565
+        d = 134.164
+        #Draw first leg
+        t.pd()
+        t.lt(90-a)
+        t.fd(d)
+        #Draw second leg
+        t.lt(180)
+        t.fd(d)
+        #Draw center stem
+        t.rt(180-2*a)
+        t.fd(d)
+        #finalize
+        t.pu()
+        t.rt(180)
+        t.fd(d)
+        t.rt(a-90)
