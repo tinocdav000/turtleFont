@@ -1,0 +1,32 @@
+import turtle as t
+import Fonts as f
+
+t.Screen()
+
+print(t.window_height())
+print(t.window_width())
+
+# determine how large the lettering should be
+size = int(input("How large should the letters be? 1-100\n"))
+size /= 100
+letSize = (120 * size) + 5
+
+# determine how many letters fit on the screen
+horizQuant = int(940 / (letSize + 5))
+vertQuant = int(810/ (letSize + 5))
+print(horizQuant)
+print(vertQuant)
+
+
+# go to the initial position
+t.setx(-470 + (letSize / 2))
+t.sety(405 - letSize)
+#f.box(size)
+
+t.speed(5)
+
+for i in range(0, horizQuant):
+    f. box(letSize)
+    t.fd(letSize + 5)
+
+t.exitonclick()
