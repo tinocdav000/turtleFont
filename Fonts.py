@@ -278,15 +278,213 @@ def drawK():
     t.fd(d)
     t.rt(180-2*x)
     t.fd(d)
-    t.lt(x)
     #get to stem
-    t.pu()
-    t.lt(180-x)
-    t.fd(120)
-    #draw stem
-    t.pd()
-    t.lt(90)
-    t.fd(120)
+    t.lt(180)
+    t.fd(d)
+    t.lt(90-x)
+    t.fd(60)
+    t.bk(120)
     #finalize
+    t.pu()
+    t.fd(120)
     t.lt(90)
     t.fd(60)
+
+
+def drawL():
+        #draw bottom stem
+        t.pd()
+        t.fd(60)
+        t.bk(120)
+        #draw vertical stem
+        t.lt(90)
+        t.fd(120)
+        #finalize
+        t.bk(120)
+        t.rt(90)
+        t.fd(60)
+        t.pu()
+
+
+def drawM():
+        x = 72.111
+        b = 33.69
+        #go to initial
+        t.bk(60)
+        t.pd()
+        #draw left stem
+        t.lt(90)
+        t.fd(120)
+        #draw center stem 1
+        t.rt(90+b)
+        t.fd(x)
+        #draw center stem 2
+        t.lt(2*b)
+        t.fd(x)
+        #draw right stem
+        t.rt(b+90)
+        t.fd(120)
+        #finalize
+        t.pu()
+        t.lt(90)
+        t.bk(60)
+
+def drawN():
+        x = 169.706
+        #go to initial
+        t.bk(60)
+        #draw first stem
+        t.pd()
+        t.lt(90)
+        t.fd(120)
+        #draw center stem
+        t.rt(90+45)
+        t.fd(x)
+        #draw final stem
+        t.lt(90+45)
+        t.fd(120)
+        #finalize
+        t.pu()
+        t.bk(120)
+        t.rt(90)
+        t.bk(60)
+
+
+def drawO():
+        #draw o
+        t.pd()
+        for i in range(360):
+                t.fd(1.048)
+                t.lt(1)
+        t.pu()
+
+def drawP():
+                #Draws an uppercase B
+        #Draw low horizontal stem
+        t.lt(180)
+        t.fd(60)
+        #Draw vertical stem
+        t.pd()
+        t.rt(90)
+        t.fd(120)
+        #Draw high horizontal stem
+        t.rt(90)
+        t.fd(60)
+        #Draw the upper hump
+        for i in range(180):
+                t.fd(0.524)
+                t.rt(1)
+        t.fd(60)
+        #finalize
+        t.pu()
+        t.lt(90)
+        t.fd(60)
+        t.lt(90)
+        t.fd(60)
+
+def drawQ():
+        x = 84.853
+        #draw o
+        t.pd()
+        for i in range(360):
+                t.fd(1.048)
+                t.lt(1)
+        #draw stem
+        t.pu()
+        t.fd(60)
+        t.pd()
+        t.lt(180-45)
+        t.fd(x)
+        #finalize
+        t.pu()
+        t.rt(45)
+        t.bk(60)
+        t.rt(90)
+
+def drawR():
+        x = 84.853
+        #go to initial
+        t.lt(180)
+        t.fd(60)
+        #Draw vertical stem
+        t.pd()
+        t.rt(90)
+        t.fd(120)
+        #Draw high horizontal stem
+        t.rt(90)
+        t.fd(30)
+        #Draw the hump
+        for i in range(180):
+                t.fd(0.524)
+                t.rt(1)
+        t.fd(30)
+        #draw the diagonal stem
+        t.rt(180)
+        #t.fd(30)
+        t.rt(45)
+        t.fd(x)
+        #finalize
+        t.pu()
+        t.lt(45)
+
+def drawS():
+        x = 0.524
+        #initial position
+        t.fd(60)
+        t.lt(90)
+        t.fd(120)
+        t.fd(30)
+        t.pd()
+        #draw top bar
+        t.lt(90)
+        t.fd(30)
+        #draw first hump
+        for i in range(180):
+                t.fd(x)
+                t.lt(1)
+        #draw second hump
+        for i in range(180):
+                t.fd(x)
+                t.rt(1)
+        t.fd(30)
+        #finalize
+        t.pu()
+        t.rt(180)
+        t.fd(30)
+
+def drawT():
+        #draw t
+        t.pd()
+        t.lt(90)
+        t.fd(120)
+        t.rt(90)
+        t.fd(60)
+        t.bk(120)
+        #finalize
+        t.pu()
+        t.fd(60)
+        t.rt(90)
+        t.fd(120)
+        t.lt(90)
+
+def drawU():
+        x = 1.048
+        #go to initial
+        t.bk(60)
+        t.rt(90)
+        t.bk(60)
+        #draw vertical stem
+        t.pd()
+        t.bk(60)
+        #draw curve
+        t.fd(60)
+        for i in range(180):
+                t.fd(x)
+                t.lt(1)
+        #draw vertical stem
+        t.fd(60)
+        #finalize
+        t.pu()
+        t.bk(120)
+        t.rt(90)
+        t.bk(60)
