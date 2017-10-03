@@ -2,7 +2,7 @@ import turtle as t
 import Fonts as f
 
 t.Screen()
-
+input("Set Screen size")
 print(t.window_height())
 print(t.window_width())
 
@@ -27,13 +27,23 @@ t.setx(-1*(wid/2) + (letSize / 2))
 t.sety((hei/2) - letSize)
 #f.box(size)
 
-t.speed(5)
+t.speed(1)
 
-for j in range(1, heiQuant):
+mess = str(input("Input your message\n"))
+#mess = [' ']*widQuant*heiQuant
+leng = len(mess)
+fill = (widQuant * heiQuant) - leng
+for i in range(0,fill):
+    mess += ' '
+print(mess)
+
+for j in range(1, heiQuant+1):
     t.setx(-1*(wid/2) + (letSize / 2))
     t.sety((hei/2) - (j * letSize) - 5)
     for i in range(0, widQuant):
-        f. box(size)
+        #f. box(size)
+        # THIS MULTIPLICATION IS ALWAYS EQUALLING ZERO
+        f.Draw(size,mess[j*i])
         t.fd(letSize + 5)
 
 t.exitonclick()
