@@ -1,8 +1,9 @@
 import turtle as t
 
-#t.Screen()
+# t.Screen()
 t.speed(1)
 t.pu()
+
 
 # Draw a box with dimensions 120x160px with vertical divisions every 40px
 def box(size):
@@ -26,9 +27,9 @@ def box(size):
     t.rt(x)
     t.fd(size * 120)
     t.lt(x)
-    t.bk(80)
+    t.bk(size * 80)
     t.rt(90)
-    t.bk(60)
+    t.bk(size * 60)
     # Reset the pen
     t.pu()
 
@@ -207,6 +208,7 @@ def drawG(size):
 def drawH(size):
     # Draws an uppercase H
     # Go to initial point
+    t.pu()
     t.bk(size * 60)
     t.lt(90)
     # Draw first vertical
@@ -224,7 +226,6 @@ def drawH(size):
     t.pu()
     t.rt(90)
     t.bk(size * 60)
-    t.rt(180)
 
 
 def drawI(size):
@@ -236,7 +237,7 @@ def drawI(size):
     t.fd(size * 60)
     # Draw center
     t.rt(90)
-    t.fd(size * 120)
+    t.bk(size * 120)
     # Draw second horizontal
     t.lt(90)
     t.fd(size * 60)
@@ -244,7 +245,9 @@ def drawI(size):
     # Finalize
     t.pu()
     t.fd(size * 60)
-
+    t.rt(90)
+    t.fd(size * 120)
+    t.lt(90)
 
 def drawJ(size):
     # go to initial point
@@ -435,10 +438,9 @@ def drawR(size):
 def drawS(size):
     x = 0.524
     # initial position
-    t.fd(size * 60)
+    t.fd(size * 30)
     t.lt(90)
     t.fd(size * 120)
-    t.fd(size * 30)
     t.pd()
     # draw top bar
     t.lt(90)
@@ -456,7 +458,6 @@ def drawS(size):
     t.pu()
     t.rt(180)
     t.fd(size * 30)
-    
 
 
 def drawT(size):
@@ -518,75 +519,183 @@ def drawV(size):
     t.fd(size * d)
     t.rt(a - 90)
 
-def drawW():
-    print('Sam')
 
-def drawX():
-    print('Sam')
+def drawW(size):
+    t.pu()
+    t.bk(60*size)
+    t.rt(90)
+    t.bk(120*size)
+    # make left diagonal line
+    t.pd()
+    tilt = 14
+    t.lt(tilt)
+    t.fd(124*size)
+    t.lt(90)
+    t.lt(50)
+    t.fd(68*size)
+    t.lt(52)
+    t.bk(68*size)
+    t.lt(-40)
+    t.fd(124*size)
+    # reset (needs fixing)
+    t.pu()
+    t.rt(-14)
+    t.bk(120*size)
+    t.rt(90)
+    t.bk(60*size)
 
-def drawY():
-    print('Sam')
 
-def drawZ():
-    print('Sam')
+def drawX(size):
+    t.pu()
+    #go to bottom left
+    t.bk(60*size)
+    t.pd()
+    #make first line
+    tilt = 45
+    t.lt(tilt)
+    t.fd(170*size)
+    t.lt(90)
+    t.lt(tilt)
+    #go to top left
+    t.pu()
+    t.fd(120*size)
+    t.pd()
+    #make second line
+    tilt = 45
+    t.rt(tilt)
+    t.bk(170*size)
+    t.rt(90)
+    t.rt(tilt)
+    # reset
+    t.pu()
+    t.bk(60 * size)
+
+
+def drawY(size):
+    #go to top right
+    t.pu()
+    t.fd(60*size)
+    t.lt(90)
+    t.fd(120*size)
+    #make right diagonal line
+    t.pd()
+    tilt = 45
+    t.rt(tilt)
+    t.bk(85*size)
+    t.rt(90)
+    #make left diagonal line
+    t.lt(0)
+    t.bk(85*size)
+    t.fd(85*size)
+    #make vertical line
+    t.rt(45)
+    t.fd(60*size)
+    #reset
+    t.lt(90)
+
+
+def drawZ(size):
+    #make bottom line
+    t.pd()
+    t.fd(60*size)
+    t.bk(120*size)
+    #make diagonal line
+    tilt = 45
+    t.lt(tilt)
+    t.fd(170*size)
+    t.lt(90*size)
+    #make top line
+    t.lt(tilt)
+    t.fd(120*size)
+    #reset
+    t.bk(60*size)
+    t.pu()
+    t.rt(90)
+    t.bk(120*size)
+    t.rt(90)
 
 
 def Draw(size, letter):
     let = str(letter)
-    if (ord(let) < 65 or ord(let) >90) and ord(let) != 32:
-        print("That is not a valid letter")
-    else:
-        if let == "A":
+    l = list(let)
+    for x in l:
+        if x == "A":
             drawA(size)
-        if let == "B":
+        if x == "B":
             drawB(size)
-        if let == "C":
+        if x == "C":
             drawC(size)
-        if let == "D":
+        if x == "D":
             drawD(size)
-        if let == "E":
+        if x == "E":
             drawE(size)
-        if let == "F":
+        if x == "F":
             drawF(size)
-        if let == "G":
+        if x == "G":
             drawG(size)
-        if let == "H":
+        if x == "H":
             drawH(size)
-        if let == "I":
+        if x == "I":
             drawI(size)
-        if let == "J":
+        if x == "J":
             drawJ(size)
-        if let == "K":
+        if x == "K":
             drawK(size)
-        if let == "L":
+        if x == "L":
             drawL(size)
-        if let == "M":
+        if x == "M":
             drawM(size)
-        if let == "N":
+        if x == "N":
             drawN(size)
-        if let == "O":
+        if x == "O":
             drawO(size)
-        if let == "P":
+        if x == "P":
             drawP(size)
-        if let == "Q":
+        if x == "Q":
             drawQ(size)
-        if let == "R":
+        if x == "R":
             drawR(size)
-        if let == "S":
+        if x == "S":
             drawS(size)
-        if let == "T":
+        if x == "T":
             drawT(size)
-        if let == "U":
+        if x == "U":
             drawU(size)
-        if let == "V":
+        if x == "V":
             drawV(size)
-        if let == "W":
+        if x == "W":
             drawW(size)
-        if let == "X":
+        if x == "X":
             drawX(size)
-        if let == "Y":
+        if x == "Y":
             drawY(size)
-        if let == "Z":
+        if x == "Z":
             drawZ(size)
-        if let == ' ':
+        if x == ' ':
             drawSpace()
+
+def drawAll():
+    w = input("Input Font Size(1-8): ")
+    x = 0
+    if w == "1":
+        x = .25
+    elif w == "2":
+        x = .5
+    elif w == "3":
+        x = .75
+    elif w == "4":
+        x = 1
+    elif w == "5":
+        x = 1.25
+    elif w == "6":
+        x = 1.5
+    elif w == "7":
+        x = 1.75
+    elif w == "8":
+        x = 2
+    else:
+        print("This number is invalid.")
+        drawAll()
+    y = input("Input Message: ")
+    z = y.upper()
+    Draw(x,z)
