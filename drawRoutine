@@ -1,5 +1,6 @@
 import turtle as t
 import Fonts as f
+import matrix as m
 
 t.Screen()
 input("Set Screen size")
@@ -23,27 +24,36 @@ print(heiQuant)
 
 
 # go to the initial position
-t.setx(-1*(wid/2) + (letSize / 2))
-t.sety((hei/2) - letSize)
-#f.box(size)
+def restartdraw(wid, hei, letSize):
+    t.setx(-1*(wid/2) + (letSize / 2))
+    t.sety((hei/2) - letSize)
+    #f.box(size)
 
-t.speed(1)
+t.speed(0)
 
 mess = str(input("Input your message\n"))
-#mess = [' ']*widQuant*heiQuant
-leng = len(mess)
-fill = (widQuant * heiQuant) - leng
-for i in range(0,fill):
-    mess += ' '
-print(mess)
+formMess = m.matrixgen(widQuant, heiQuant, mess)
+print(formMess)
 
-for j in range(1, heiQuant+1):
+# Drawing sequence
+refnum = len(formMess)/heiQuant
+#restartdraw(wid, hei, letSize)
+
+for j in range(1, len(formMess)+1):
+    k = j % heiQuant
+    print(k)
+    if k == 0:
+        time.sleep(1)
+        t.clear()
+    t.pu()
     t.setx(-1*(wid/2) + (letSize / 2))
-    t.sety((hei/2) - (j * letSize) - 5)
+    t.sety((hei/2) - (k * letSize) - 5)
+    ylis = formMess[j-1]
+    
     for i in range(0, widQuant):
-        #f. box(size)
+        #f.box(size)
         # THIS MULTIPLICATION IS ALWAYS EQUALLING ZERO
-        f.Draw(size,mess[j*i])
+        f.Draw(size, ylis[i])
         t.fd(letSize + 5)
 
 t.exitonclick()
