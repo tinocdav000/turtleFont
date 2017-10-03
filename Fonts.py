@@ -591,6 +591,7 @@ def drawY(size):
     t.rt(45)
     t.fd(60*size)
     #reset
+    t.pu()
     t.lt(90)
 
 
