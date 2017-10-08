@@ -674,29 +674,3 @@ def Draw(size, letter):
             drawZ(size)
         if x == ' ':
             drawSpace()
-
-def drawAll():
-    w = input("Input Font Size(1-8): ")
-    x = 0
-    if w == "1":
-        x = .25
-    elif w == "2":
-        x = .5
-    elif w == "3":
-        x = .75
-    elif w == "4":
-        x = 1
-    elif w == "5":
-        x = 1.25
-    elif w == "6":
-        x = 1.5
-    elif w == "7":
-        x = 1.75
-    elif w == "8":
-        x = 2
-    else:
-        print("This number is invalid.")
-        drawAll()
-    y = input("Input Message: ")
-    z = y.upper()
-    Draw(x,z)
