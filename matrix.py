@@ -45,7 +45,7 @@ def inputs():
     mess = mess.upper()
     mes = ''
     for s in mess:
-        if ord(s) in range(65,91):
+        if ord(s) in range(65,91) or s == ' ':
             mes += s
         else:
             pass
@@ -73,7 +73,7 @@ def inputs():
     # Input the thickness of the lettering
     fin = False
     while not fin:
-        thick = input("How thick should the letters be? 1-10? \nKeep in mind that the smaller the letters, the harder this will be to read, 5 is recommended\n")
+        thick = input("How thick should the letters be? 1-10? \nKeep in mind that the smaller the letters, the harder this will be to read, 3 is recommended\n")
         fin = True
         for i in thick:
             if ord(i) in range(48,58):
